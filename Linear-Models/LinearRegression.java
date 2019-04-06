@@ -1,8 +1,6 @@
-// Linear Regression using Batch Gradient Descent.
-
 import java.lang.Math;
 
-public class LinearRegression {
+public class LinearRegression extends Model {
 	private double[][] X;
 	private double[] y;
 	private int maxEpochs;
@@ -27,7 +25,7 @@ public class LinearRegression {
 		}
 	}
 	
-	public double meanSquaredError(double[][] X, double[] y) {
+	public double error(double[][] X, double[] y) {
 		double[] errors = new double[X.length];
 		
 		for (int i = 0; i < X.length; i++) {
@@ -51,7 +49,7 @@ public class LinearRegression {
 				this.coefs[j] = this.coefs[j] - (this.learningRate * derivCoefs()[j]);
 			}
 						
-			System.out.println("[!]\tEpoch=" + i + "\tMSE=" + meanSquaredError(this.X, this.y));
+			System.out.println("[!]\tEpoch=" + i + "\tMSE=" + error(this.X, this.y));
 		}
 	}
 	
