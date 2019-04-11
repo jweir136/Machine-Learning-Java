@@ -28,25 +28,8 @@ public class UnweightedBagging {
 
   public double[] baggingPredict(double[][] X) {
     double[] predictions = new double[X.length];
-    double[][] modelPredictions = new double[this.models.length][X.length];
     int counter = 0;
 
-    for (int i = 0; i < this.models.length; i++) {
-      this.models[i].fit(this.X, this.y);
-      this.models[i].train();
-
-      modelPredictions[i] = this.models[i].predict(X);
-    }
-
-    for (int j = 0; j < X[0].length; j++) {
-      double result = 0.0;
-
-      for (int k = 0; k < this.models.length; k++) {
-        result += modelPredictions[k][j];
-      }
-
-      predictions[counter++] = result / X[0].length;
-    }
 
     return predictions;
   }
