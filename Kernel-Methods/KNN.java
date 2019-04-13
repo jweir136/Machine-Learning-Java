@@ -1,3 +1,11 @@
+/*
+  KNN Model.
+  ******************
+  This is an implemention of the basic K-Nearest-Neighbors model.
+  This can be used for both classification and regression. To use it with
+  regression, just round the predictions in any way that you want.
+*/
+
 import java.util.*;
 import java.lang.*;
 
