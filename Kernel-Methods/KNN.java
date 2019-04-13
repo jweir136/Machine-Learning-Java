@@ -1,12 +1,12 @@
 import java.util.*;
 import java.lang.*;
 
-public class KNNRegression extends Model {
+public class KNN extends Model {
   private double[][] X;
   private double[] y;
   private int k;
 
-  public KNNRegression(int k) {
+  public KNN(int k) {
     this.k = k;
   }
 
