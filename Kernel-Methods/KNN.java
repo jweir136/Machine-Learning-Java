@@ -92,4 +92,5 @@ public class KNN extends Model {
   
   public void close() {
     ;
+  }
 }
