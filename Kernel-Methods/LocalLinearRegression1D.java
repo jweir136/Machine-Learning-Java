@@ -143,4 +143,5 @@ public class LocalLinearRegression1D extends Model {
   public void close() {
     this.alpha = 1e-10;
     this.beta = 1e-10;
+  }
 }
