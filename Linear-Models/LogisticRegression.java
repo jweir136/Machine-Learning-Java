@@ -93,4 +93,10 @@ public class LogisticRegression extends Model {
 			System.out.println("[!]\tEpoch=" + i + "\tError=" + error(this.X, this.y));
 		}
 	}
+	
+	public void close() {
+		for (int i = 0; i < this.weights.length; i++) {
+			this.weights[i] = 1e-10;	
+		}
+	}
 }
