@@ -94,4 +94,8 @@ public class NadarayaWatsonKernel1D extends Model {
 
     return result;
   }
+  
+  public void close() {
+    ;
+  }
 }
