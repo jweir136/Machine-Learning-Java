@@ -3,4 +3,5 @@ public abstract class Model {
 	abstract double error(double[][] X, double[] y);
 	abstract double[] predict(double[][] X);
 	abstract void train();
+	abstract void close();
 }
