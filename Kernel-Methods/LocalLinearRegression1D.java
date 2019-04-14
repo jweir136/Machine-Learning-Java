@@ -139,4 +139,8 @@ public class LocalLinearRegression1D extends Model {
       System.out.println("Epoch=" + i + "\tAlpha=" + this.alpha);
     }
   }
+  
+  public void close() {
+    this.alpha = 1e-10;
+    this.beta = 1e-10;
 }
