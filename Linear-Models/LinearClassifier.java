@@ -121,4 +121,11 @@ public class LinearClassifier extends Model {
 		}
 		return false;
 	}
+	
+	public void close() {
+		for (int i = 0; i < this.coefs.length; i++) {
+			this.coefs[i] = 1e-10;
+		}
+		this.intercept = 1e-10;
+	}
 }
