@@ -25,13 +25,16 @@ public class LinearClassifier extends Model {
 	}
 	
 	public double error(double[][] X, double[] y) {
-		double[] errors = new double[X.length];
-		
-		for (int i = 0; i < X.length; i++) {
-			errors[i] = (predict(X)[i] - y[i])*(predict(X)[i] - y[i]);
-		}
-		
-		return sum(errors) / errors.length;
+		double[] preds = predict(X);
+    int correct = 0;
+
+    for (int i = 0; i < preds.length; i++) {
+      if ((int)y[i] == (int)(Math.round(preds[i]))) {
+        correct++;
+      }
+    }
+
+    return 1.0 - (correct / y.length);
 	}
 	
 	public void train() {
@@ -48,7 +51,7 @@ public class LinearClassifier extends Model {
 				this.coefs[j] = this.coefs[j] - (this.learningRate * derivCoefs()[j]);
 			}
 						
-			System.out.println("[!]\tEpoch=" + i + "\tMSE=" + error(this.X, this.y));
+			System.out.println("[!]\tEpoch=" + i + "\tError=" + error(this.X, this.y));
 		}
 	}
 	
