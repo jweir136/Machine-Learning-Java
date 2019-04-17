@@ -63,7 +63,7 @@ public class FeedForwardLinearLayer extends Model {
     double error = 0.0;
 
     for (int i = 0; i < this.X.length; i++) {
-      error -= this.y[i] - predictions[i];
+      error += -(this.y[i] - predictions[i]);
     }
 
     return (2.0 * error) / this.y.length;
